@@ -37,7 +37,7 @@ class XposedInit : IXposedHookLoadPackage {
         val sessionUuid = UUID.randomUUID().toString()
         val fakeAndroidId = sessionUuid.replace("-", "").substring(0, 16)
         
-        XposedBridge.log("$TAG: Patching pl.solidexplorer2 for Android 10 (SDK 29)")
+        XposedBridge.log("$TAG: Patching pl.solidexplorer2 for Android 16 (SDK 36)")
 
         try {
             val licenseClass = "pl.solidexplorer.licensing.SELicenseManager"
