@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "dev.fzer0x.fucksolidexplorer"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "dev.fzer0x.fucksolidexplorer"
         minSdk = 29
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 7
         versionName = "1.6"
     }
