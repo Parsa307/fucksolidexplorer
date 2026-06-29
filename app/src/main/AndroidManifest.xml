@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
     <uses-permission android:name="android.permission.INTERNET" />
-
     <queries>
         <package android:name="pl.solidexplorer2" />
     </queries>
-
     <application
         android:allowBackup="true"
-        android:icon="@drawable/symbolv1"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/symbolv1"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.FuckSolidExplorer">
-
+        android:label="@string/app_name">
         <meta-data
             android:name="xposedmodule"
             android:value="true" />
@@ -30,17 +22,5 @@
         <meta-data
             android:name="xposedmoduleentry"
             android:value="dev.fzer0x.fucksolidexplorer.XposedInit" />
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.FuckSolidExplorer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-
-</manifest>
+        </application>
+    </manifest>

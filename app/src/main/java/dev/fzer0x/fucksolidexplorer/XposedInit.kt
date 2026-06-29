@@ -20,24 +20,12 @@ class XposedInit : IXposedHookLoadPackage {
     }
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        if (lpparam.packageName == "dev.fzer0x.fucksolidexplorer") {
-            try {
-                XposedHelpers.findAndHookMethod(
-                    "dev.fzer0x.fucksolidexplorer.MainActivity",
-                    lpparam.classLoader,
-                    "isModuleActive",
-                    XC_MethodReplacement.returnConstant(true)
-                )
-            } catch (ignored: Throwable) {}
-            return
-        }
-
         if (lpparam.packageName != TARGET_PACKAGE) return
 
         val sessionUuid = UUID.randomUUID().toString()
         val fakeAndroidId = sessionUuid.replace("-", "").substring(0, 16)
         
-        XposedBridge.log("$TAG: Patching pl.solidexplorer2 for Android 16 (SDK 36)")
+        XposedBridge.log("$TAG: Hooking into pl.solidexplorer2")
 
         try {
             val licenseClass = "pl.solidexplorer.licensing.SELicenseManager"
@@ -51,13 +39,6 @@ class XposedInit : IXposedHookLoadPackage {
                     } else if (name.contains("trial") || name.contains("expired") || name.contains("ads")) {
                         XposedBridge.hookMethod(method, XC_MethodReplacement.returnConstant(false))
                     }
-                }
-                if (method.returnType == String::class.java && (name.contains("license") || name.contains("status"))) {
-                    XposedBridge.hookMethod(method, object : XC_MethodHook() {
-                        override fun afterHookedMethod(param: MethodHookParam) {
-                            param.result = "PREMIUM UNLOCKED BY fzer0x"
-                        }
-                    })
                 }
             }
         } catch (e: Throwable) {
@@ -97,7 +78,7 @@ class XposedInit : IXposedHookLoadPackage {
                         val host = param.args[0] as? String ?: return
                         val blocked = listOf("adservice", "googleads", "doubleclick", "firebase", "crashlytics")
                         if (blocked.any { host.contains(it) }) {
-                            param.throwable = UnknownHostException("Blocked by FuckSolidExplorer")
+                            param.throwable = UnknownHostException("Blocked")
                         }
                     }
                 }
