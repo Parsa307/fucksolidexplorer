@@ -8,7 +8,6 @@ A modern LSPosed module to unlock premium features and remove advertisements fro
 - **Ad-Block**: Removes all integrated advertisements.
 - **Privacy Protection**: Disables Firebase Analytics and Crashlytics within Solid Explorer.
 - **Device-ID Protection**: Fakes unique identifiers (Android ID, Serial, etc.) to prevent tracking.
-- **Modern UI**: Stylish 3D Statis app built with Jetpack Compose.
 
 ## Installation
 
