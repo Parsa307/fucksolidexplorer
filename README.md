@@ -15,7 +15,6 @@ A modern LSPosed module to unlock premium features and remove advertisements fro
 2. Enable the module in your Xposed manager (LSPosed, EdXposed, etc.).
 3. **Recommended Scope**: Ensure "Solid Explorer" is selected in the module's scope.
 4. Reboot your device (or force stop Solid Explorer).
-5. Open the FuckSolidExplorer app to verify the activation status.
 
 ## Build
 
