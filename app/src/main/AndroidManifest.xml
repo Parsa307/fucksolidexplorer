@@ -14,7 +14,7 @@
             android:value="Premium features and ad-block for Solid Explorer" />
         <meta-data
             android:name="xposedminversion"
-            android:value="93" />
+            android:value="102" />
         <meta-data
             android:name="xposedscope"
             android:resource="@array/xposed_scope" />
