@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FuckSolidExplorer</string>
+    <string name="module_description">Premium features and ad-block for Solid Explorer</string>
 </resources>
